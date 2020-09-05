@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+a {
+	color: #007bff;
+	text-decoration: none;
+	background-color: transparent;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Color Palette */
+/* From: https://www.nordtheme.com/docs/colors-and-palettes */
+* {
+	/* Polar Night */
+	--nord-0: #2e3440; /* For dark ambiance designs, it is used for background and area coloring.
+	For bright ambiance designs, it is used for base elements like plain text, the text editor caret.
+	It is rarely used for passive UI elements like borders, but might be possible to achieve a higher contrast and better visual distinction (harder/not flat) between larger components.*/
+	
+	--nord-1: #3b4252; /* For dark ambiance designs it is used for elevated, more prominent or focused UI elements like
+    • status bars and text editor gutters
+    • panels, modals and floating popups like notifications or auto completion
+	• user interaction/form components like buttons, text/select fields or checkboxes
+
+	For bright ambiance designs, it is used for more subtle/inconspicuous UI text elements that do not need so much visual attention.
+	*/
+	--nord-2: #434c5e; /* For dark ambiance designs, it is used to colorize the currently active text editor line as well as selection.
+	For both bright & dark ambiance designs it can also be used as an brighter variant for the same target elements like nord1.*/
+	--nord-3: #4c566a;
+	/* For dark ambiance designs, it is used for UI elements like indent- and wrap guide marker.
+	For bright ambiance designs, it is, next to nord1 and nord2 as darker variants, also used for the most subtle/inconspicuous UI text elements that do not need so much visual attention.*/
+	/* Snow Storm */
+	--nord-4: #d8dee9;
+	/* For dark ambiance designs, it is used for UI elements like the text editor caret.
+	In the context of syntax highlighting it is used as text color for variables, constants, attributes and fields.
+
+	For bright ambiance designs, it is used for elevated, more prominent or focused UI elements like
+	• status bars and text editor gutters
+    • panels, modals and floating popups like notifications or auto completion
+    • user interaction/form components like buttons, text/select fields or checkboxes*/
+	--nord-5: #e5e9f0;
+	/* For dark ambiance designs, it is used for more subtle/inconspicuous UI text elements that do not need so much visual attention.
+	Other use cases are also state animations like a more brighter text color when a button is hovered, active or focused.
+
+	For bright ambiance designs, it is used to colorize the currently active text editor line as well as selection- and text highlighting color.
+	*/
+	--nord-6: #eceff4;
+	/* For dark ambiance designs, it is used for elevated UI text elements that require more visual attention.
+	For bright ambiance designs, it is used as background and area coloring.*/
+
+	/* Frost */
+	/* Frost can be described as the heart palette of Nord, a group of four bluish colors that are commonly used for primary UI component and text highlighting. */
+	/*All colors of this palette are used the same for both dark & bright ambiance designs.*/
+	--nord-7: #8fbcbb; /* Used for UI elements that should, next to the primary accent color nord8, stand out and get more visual attention. */
+	--nord-8: #88c0d0; /* Used for primary UI elements with main usage purposes that require the most visual attention. */
+	--nord-9: #81a1c1; /* Used for secondary UI elements that also require more visual attention than other elements.*/
+	--nord-10: #5e81ac; /* Used for tertiary UI elements that require more visual attention than default elements.*/
+	/* Aurora */
+	/* All colors of this palette are used the same for both dark & bright ambiance designs. */
+	--nord-11: #bf616a; /* Used for UI elements that are rendering error states */
+	--nord-12: #d08770; /* Rarely used for UI elements, but it may indicate a more advanced or dangerous functionality. We can use this for alerts, i guess? */
+	--nord-13: #ebcb8b; /* Used for UI elements that are rendering warning states */
+	--nord-14: #a3be8c; /* Used for UI elements that are rendering success states */
+	--nord-15: #b48ead; /* Rarely used for UI elements, but it may indicate a more uncommon functionality. For example, we can indicate beta/unstable features using this color. */
+}

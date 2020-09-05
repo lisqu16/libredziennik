@@ -1,0 +1,112 @@
+body{
+    background-image: url("img/day.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #eceff4;
+    user-select: none;
+    overflow: hidden;
+}
+.center{
+    margin: 0;
+    background: rgba(59, 66, 82, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+}
+footer{
+    text-align: center;
+    color: rgb(59, 66, 82);
+}
+.center a{
+  color: #aad3ff;
+}
+  
+  .form__input {
+    color: var(--nord-3);
+    font-size: 1rem;
+    margin: 0 auto;
+    padding: 1.0rem 1.2rem;
+    border-radius: 0.2rem;
+    background-color: var(--nord-6);
+    border: none;
+    width: 90%; /* TODO: ZAPYTAC SIE LISKQU CZY LEPIEJ ZROBIC 85% */
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+  }
+  
+  .button {
+    background-color: #5e81ac; /* dark blue */
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .button:hover{
+    background-color: var(--nord-9);
+  }
+
+
+  /* LADOWANIE */
+  .spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+  
+  .cube1, .cube2 {
+    background-color: #eceff4;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+    animation: sk-cubemove 1.8s infinite ease-in-out;
+  }
+  
+  .cube2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+  
+  @-webkit-keyframes sk-cubemove {
+    25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+    50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+    75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+    100% { -webkit-transform: rotate(-360deg) }
+  }
+  
+  @keyframes sk-cubemove {
+    25% { 
+      transform: translateX(42px) rotate(-90deg) scale(0.5);
+      -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+    } 50% { 
+      transform: translateX(42px) translateY(42px) rotate(-179deg);
+      -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+    } 50.1% { 
+      transform: translateX(42px) translateY(42px) rotate(-180deg);
+      -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+    } 75% { 
+      transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+      -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    } 100% { 
+      transform: rotate(-360deg);
+      -webkit-transform: rotate(-360deg);
+    }
+  }

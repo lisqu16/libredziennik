@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libredziennik</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="center">
+        <h1 style="font-size: 45px;">Zaloguj się</h1>
+        <div id="firstshow">
+            <div class="form__group">
+                <input type="text" class="form__input" id="logoin" placeholder="Login" required />
+            </div><br>
+            <div class="form__group">
+                <input type="password" class="form__input" id="haselko" placeholder="Hasło" required />
+            </div>
+        </div>
+        <div id="logprog" style="display: none;">
+            <h1>Witaj, <span id="nejm"></span>!</h1>
+            <div class="spinner">
+                <div class="cube1"></div>
+                <div class="cube2"></div>
+              </div>
+        </div>
+        <div id = "butony">
+            <button class="button" onclick = "welcome();">Zaloguj</button><br><br>
+        <!--nei mam co tu dać więc dałem  ｄａｓ　ｉｎｔｅｒｎｅｔ　ｉｓｔ　ｆüｒ　ｕｎｓ　ａｌｌｅ　ｎｅｕｌａｎｄ-->
+        <a href="https://www.youtube.com/watch?v=reCMB81A70k">Zresetuj hasło </a>
+        </div>
+    </div>
+    <!--Informacja o źródłe obrazu jest dobrowolna, jak cos to ja usune-->
+    <footer>LibreDziennik build 0<br>Obraz <a
+            href="https://pixabay.com/pl/users/iniesta44-4560761/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4970081">
+            Patrik Houštecký</a> z <a
+            href="https://pixabay.com/pl/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4970081">
+            Pixabay</a></footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
