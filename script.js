@@ -1,9 +1,3 @@
-function welcome(){
-    document.getElementById('logprog').style.display = "block";
-    document.getElementById('firstshow').style.display = "none";
-    document.getElementById('butony').style.display = "none";
-    document.getElementById('nejm').innerText = document.getElementById('logoin').value;
-}
 /* Dynamiczna tapeta czy coś w tym stylu */
 var d = new Date();
 var n = d.getHours();
