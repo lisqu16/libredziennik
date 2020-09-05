@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)) {
+        header("Location: ./panel/index.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -13,6 +22,7 @@
     <div class="center">
         <h1 style="font-size: 45px;">Zaloguj się</h1>
         <div id="firstshow">
+            <form action="./konto/zaloguj.php" method="POST">
             <div class="form__group">
                 <input type="text" class="form__input" id="login" name="login" placeholder="Login" required />
             </div><br>
@@ -20,11 +30,17 @@
                 <input type="password" class="form__input" id="password" name="password" placeholder="Hasło" required />
             </div>
             <div class="form__group error">
-                
+                <?php
+                    if(isset($_SESSION['error'])) {
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                    }
+                ?>
             </div>
         </div>
         <div id="buttons">
             <button class="button">Zaloguj</button><br><br>
+            </form>
         <a href="">Zresetuj hasło </a>
         </div>
     </div>
