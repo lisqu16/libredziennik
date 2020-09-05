@@ -24,6 +24,11 @@ footer{
 }
 .center a{
   color: var(--nord-10);
+  transition: all 0.3s;
+}
+
+.center a:hover {
+  color: var(--nord-9);
 }
   
 .error {
