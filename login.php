@@ -24,7 +24,12 @@
         <div id="firstshow">
             <form action="./konto/zaloguj.php" method="POST">
             <div class="form__group">
-                <input type="text" class="form__input" id="login" name="login" placeholder="Login" required />
+                <input type="text" class="form__input" id="login" name="login" placeholder="Login" required <?php
+                    if (isset($_SESSION['given_login'])) {
+                        echo "value=\"".$_SESSION['given_login']."\"";
+                        unset($_SESSION['given_login']);
+                    }
+                ?>/>
             </div><br>
             <div class="form__group">
                 <input type="password" class="form__input" id="password" name="password" placeholder="Hasło" required />

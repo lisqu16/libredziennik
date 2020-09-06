@@ -43,6 +43,7 @@
         header("Location: ../panel/index.php"); # wysyłanie użytkownika do panelu
 
     } catch (Exception $e) {
+        $_SESSION['given_login'] = $_POST['login'];
         $_SESSION['error'] = $e->getMessage();
         header("Location: ../login.php");
     }
