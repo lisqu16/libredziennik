@@ -19,8 +19,8 @@
         $login = htmlentities($_POST['login'], ENT_QUOTES, "UTF-8");
         $pass = htmlentities($_POST['password'], ENT_QUOTES, "UTF-8");
 
-        $result = @$connection->query(sprintf("SELECT * FROM users WHERE login='%s' AND password='%s'",
-    mysqli_real_escape_string($connection, $login), mysqli_real_escape_string($connection, $pass))); # wysyłanie zapytania do bazy danych
+        $result = @$connection->query(sprintf("SELECT * FROM users WHERE login='%s'",
+    mysqli_real_escape_string($connection, $login))); # wysyłanie zapytania do bazy danych
         if (!$result) {
             throw new Exception("Wystąpił nieoczekiwany błąd podczas wysyłania zapytania do bazy danych LibreDziennik.");
         }
@@ -30,9 +30,15 @@
             throw new Exception("Nieprawidłowy login lub hasło!");
         }
 
-        $_SESSION['logged'] = true;
-
         $data = $result->fetch_assoc(); # pobiera dane znalezionego użytkownika
+
+        # sprawdzanie hasła
+        if (!(password_verify($pass, $data['password']))) {
+            throw new Exception("Nieprawidłowy login lub hasło!");
+        }
+
+        # zapisuje dane w zmiennej sesyjnej
+        $_SESSION['logged'] = true;
         $_SESSION['name'] = $data['name'];
         $_SESSION['surname'] = $data['surname'];
         $_SESSION['email'] = $data['email'];
