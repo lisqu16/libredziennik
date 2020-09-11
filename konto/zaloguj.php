@@ -16,12 +16,11 @@
             throw new Exception("Wystąpił błąd ".$connection->errno." podczas próby połączenia z bazą danych LibreDziennik.");
         }
     
-        $login = $_POST['login'];
-        $pass = $_POST['password'];
+        $login = htmlentities($_POST['login'], ENT_QUOTES, "UTF-8");
+        $pass = htmlentities($_POST['password'], ENT_QUOTES, "UTF-8");
 
-        $sql = "SELECT * FROM users WHERE login='$login' AND password='$pass'";
-
-        $result = @$connection->query($sql); # wysyłanie zapytania do bazy danych
+        $result = @$connection->query(sprintf("SELECT * FROM users WHERE login='%s' AND password='%s'",
+    mysqli_real_escape_string($connection, $login), mysqli_real_escape_string($connection, $pass))); # wysyłanie zapytania do bazy danych
         if (!$result) {
             throw new Exception("Wystąpił nieoczekiwany błąd podczas wysyłania zapytania do bazy danych LibreDziennik.");
         }
@@ -43,7 +42,7 @@
         header("Location: ../panel/index.php"); # wysyłanie użytkownika do panelu
 
     } catch (Exception $e) {
-        $_SESSION['given_login'] = $_POST['login'];
+        $_SESSION['given_login'] = htmlentities($_POST['login'], ENT_QUOTES, "UTF-8");
         $_SESSION['error'] = $e->getMessage();
         header("Location: ../login.php");
     }
