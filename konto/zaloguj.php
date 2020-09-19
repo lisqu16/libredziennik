@@ -42,14 +42,20 @@
         $_SESSION['name'] = $data['name'];
         $_SESSION['surname'] = $data['surname'];
         $_SESSION['email'] = $data['email'];
+        $_SESSION['deactivated'] = $data['deactivated'];
 
         $result->free_result(); # wywalanie niepotrzebnych danych
 
-        header("Location: ../panel/index.php"); # wysyłanie użytkownika do panelu
+        if($_SESSION['deactivated']==1) {
+            throw new Exception("Twoje konto zostało zablokowane przez administratora szkoły!");
+        } else {
+            header("Location: ../panel/index.php"); # wysyłanie użytkownika do panelu   
+        }
 
     } catch (Exception $e) {
         $_SESSION['given_login'] = htmlentities($_POST['login'], ENT_QUOTES, "UTF-8");
         $_SESSION['error'] = $e->getMessage();
+        unset($_SESSION['logged']);
         header("Location: ../login.php");
     }
 
