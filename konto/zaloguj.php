@@ -13,7 +13,7 @@
         $connection = @new mysqli($host, $db_user, $db_pass, $db_name); # połączenie z bazą danych
     
         if ($connection->connect_errno!=0) {
-            throw new Exception("Wystąpił błąd ".$connection->errno." podczas próby połączenia z bazą danych LibreDziennik.");
+            throw new Exception("Wystąpił błąd ".$connection->connect_errno." podczas próby połączenia z bazą danych LibreDziennik.");
         }
     
         $login = htmlentities($_POST['login'], ENT_QUOTES, "UTF-8");
